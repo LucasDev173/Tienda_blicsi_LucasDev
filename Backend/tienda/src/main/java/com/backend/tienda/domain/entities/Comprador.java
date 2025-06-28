@@ -1,18 +1,23 @@
 package com.backend.tienda.domain.entities;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@DiscriminatorValue("CLIENTE")
 @Getter
 @Setter
-@Entity
-@DiscriminatorValue(value = "Comprador")
-public class Comprador extends Usuario{
-    private String Cart_id;
+@NoArgsConstructor
+public class Comprador extends Usuario {
 
-    public Comprador(String ID, String Username, String Password) {
-        super(ID, Username, Password);
+    private String direccion;
+    private String telefono;
+    private boolean newsletter;
+
+    public Comprador(String username, String password, String direccion) {
+        super(null, username, password);
+        this.direccion = direccion;
     }
 }
