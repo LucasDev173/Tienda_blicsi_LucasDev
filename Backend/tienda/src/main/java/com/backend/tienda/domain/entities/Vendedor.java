@@ -9,5 +9,12 @@ import lombok.Setter;
 @Setter
 @Entity
 @DiscriminatorValue(value = "Vendedor")
-public class Vendedor {
+public class Vendedor extends Usuario {
+    private String direccion;
+    private String telefono;
+
+    public Vendedor(String username, String password, String direccion) {
+        super(null, username, password);
+        this.direccion = direccion;
+    }
 }
