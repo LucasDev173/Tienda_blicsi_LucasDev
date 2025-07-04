@@ -4,17 +4,20 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @DiscriminatorValue("ADMIN")
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Admin extends Usuario {
 
+    @Column
     private String nivelAcceso;
 
-    @Column(name = "departamento")
+    @Column
     private String departamento;
 
     // Constructor específico

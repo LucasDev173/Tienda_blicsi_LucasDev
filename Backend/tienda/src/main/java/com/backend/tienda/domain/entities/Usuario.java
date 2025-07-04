@@ -1,10 +1,7 @@
 package com.backend.tienda.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "permisos", discriminatorType = DiscriminatorType.STRING)
@@ -13,6 +10,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
