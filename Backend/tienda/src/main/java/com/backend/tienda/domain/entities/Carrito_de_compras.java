@@ -15,7 +15,7 @@ import java.util.List;
 public class Carrito_de_compras {
     @Id
     @Column(name = "comprador_id")
-    private String id;
+    private long id;
     @OneToMany(mappedBy = "carrito", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List <Producto> productos;
 

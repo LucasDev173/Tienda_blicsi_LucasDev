@@ -13,8 +13,8 @@ import lombok.*;
 @ToString
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Column(unique = true, nullable = false)
     private String username;
