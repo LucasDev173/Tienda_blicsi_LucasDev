@@ -1,8 +1,8 @@
 package com.backend.tienda.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @ToString
-public class Reporte_ventas {
+public class Reporte_ganancias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -22,10 +22,9 @@ public class Reporte_ventas {
     @JoinColumn(name="vendedor_id")
     private Vendedor vendedor;
 
-    @ManyToOne
-    @JoinColumn(name="reporte_ganancias_id")
-    private Reporte_ganancias reporteGanancias;
+    @OneToMany(mappedBy = "reporteGanancias")
+    private List<Reporte_ventas> reportesVentas;
 
-    @OneToMany(mappedBy = "reporteVentas")
-    private List<Log> logs;
+    @Column
+    private float gananciaTotal;
 }
