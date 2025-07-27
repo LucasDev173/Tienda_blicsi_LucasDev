@@ -14,8 +14,9 @@ import java.util.List;
 @ToString
 public class Carrito_de_compras {
     @Id
-    @Column(name = "comprador_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    
     @OneToMany(mappedBy = "carrito", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List <Producto> productos;
 

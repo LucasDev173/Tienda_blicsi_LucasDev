@@ -24,7 +24,7 @@ public class Comprador extends Usuario {
     private Carrito_de_compras carritoDeCompras;
 
     public Comprador(String username, String password, String direccion) {
-        super(null, username, password);
+        super(username, password);
         this.direccion = direccion;
         this.carritoDeCompras=new Carrito_de_compras();
     }

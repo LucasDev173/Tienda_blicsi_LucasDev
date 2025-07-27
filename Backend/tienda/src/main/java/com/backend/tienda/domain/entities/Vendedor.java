@@ -30,7 +30,7 @@ public class Vendedor extends Usuario {
     private List<Reporte_ventas> reportesVentas;
 
     public Vendedor(String username, String password, String direccion) {
-        super(null, username, password);
+        super(username, password);
         this.direccion = direccion;
     }
 }

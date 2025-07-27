@@ -21,7 +21,7 @@ public class Admin extends Usuario {
 
     // Constructor específico
     public Admin(String username, String password, String nivelAcceso, String departamento) {
-        super(null, username, password);
+        super(username, password);
         this.nivelAcceso = nivelAcceso;
         this.departamento = departamento;
     }

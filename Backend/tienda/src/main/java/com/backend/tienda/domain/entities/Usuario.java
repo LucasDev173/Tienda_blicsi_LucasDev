@@ -22,7 +22,7 @@ public class Usuario {
     @Column(nullable = false)
     private String password;
 
-    public Usuario(Object o, String username, String password) {
+    public Usuario(String username, String password) {
         this.username=username;
         this.password=password;
     }
