@@ -12,9 +12,9 @@ import java.util.List;
 @Repository
 public interface VendedorRepostory extends JpaRepository<Vendedor,Long> {
 
-    List<Vendedor> findByDireccion(String direccion);
-    List<Vendedor> findByTelefono(String telefono);
+    public List<Vendedor> findByDireccion(String direccion);
+    public List<Vendedor> findByTelefono(String telefono);
 
     @Query("SELECT a FROM Vendedor a JOIN Usuario u ON a.id = u.id WHERE u.username LIKE %:nombre%")
-    List<Vendedor> buscarPorNombreUsuarioaVendedor(String nombre);
+    public List<Vendedor> buscarPorNombreUsuarioaVendedor(String nombre);
 }

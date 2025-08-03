@@ -11,11 +11,11 @@ import java.util.List;
 @Repository
 public interface CompradorRepository extends JpaRepository<Comprador,Long> {
 
-    List<Comprador> findByDireccion(String direccion);
-    List<Comprador> findByTelefono(String telefono);
-    List<Comprador> findByNewsletterTrue();
+    public List<Comprador> findByDireccion(String direccion);
+    public List<Comprador> findByTelefono(String telefono);
+    public List<Comprador> findByNewsletterTrue();
 
     @Query("SELECT a FROM Comprador a JOIN Usuario u ON a.id = u.id WHERE u.username LIKE %:nombre%")
-    List<Comprador> buscarPorNombreUsuarioaComprador(String nombre);
+    public List<Comprador> buscarPorNombreUsuarioaComprador(String nombre);
 
 }

@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface LogRepository extends JpaRepository <Log,Long> {
 
-    List<Log> findByVentaComprador(Long ventaComprador);
-    List<Log> findByVentaVendedor(Long ventaVendedor);
-    List<Log> findByVentaProducto(Long ventaProducto);
-    List<Log> findByVentaPrecio(Long VentaPrecio);
+    public List<Log> findByVentaComprador(Long ventaComprador);
+    public List<Log> findByVentaVendedor(Long ventaVendedor);
+    public List<Log> findByVentaProducto(Long ventaProducto);
+    public List<Log> findByVentaPrecio(Long VentaPrecio);
 
 }
