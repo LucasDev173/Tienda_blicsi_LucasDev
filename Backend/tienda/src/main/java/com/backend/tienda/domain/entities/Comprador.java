@@ -9,8 +9,8 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @ToString
+@NoArgsConstructor
 public class Comprador extends Usuario {
 
     @Column
